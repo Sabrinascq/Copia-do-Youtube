@@ -1,0 +1,54 @@
+body {
+  color: white;/* cor do texto */
+  font-family: Arial, sans-serif;/* fonte padrão */
+  background-color: #0f0f0f;/* cor de fundo */
+  padding: 20px;/* espaço interno */
+}
+.menu {
+  background-color: #0f0f0f;/* cor de fundo */
+  padding: 10px;/* espaço interno */
+  display: flex;/* usa flexbox para layout */
+  gap: 20px;/* espaço entre os links */
+  align-items: center;/* alinha os itens verticalmente */
+  border-radius: 8px;/* cantos arredondados */
+  border: 1px solid #888; 
+}
+
+h1 {
+  margin-bottom: 20px;/* espaço abaixo do título */
+}
+
+.carrossel {
+  display: flex;/* usa flexbox para layout */
+  overflow-x: auto;/* permite rolagem horizontal */
+  gap: 20px;/* espaço entre os vídeos */
+  padding-bottom: 10px;/* espaço abaixo do carrossel */
+  scroll-behavior: smooth;/* animação suave ao rolar */
+}
+
+
+.video {
+/*tamanho do video-imagem*/ 
+  min-width: 200px;/* largura mínima */
+  flex: 0;/* impede que o item cresça ou encolha */
+  text-align: center;/* centraliza o texto */
+}
+
+.video img {
+  width: 100%;/* largura total do container */
+  border-radius: 8px;/* cantos arredondados */
+}
+
+.video p {
+  margin-top: 8px;/* espaço acima do texto */
+  font-weight: bold;/* deixa o texto mais marcante */
+}
+
+a {
+  color: white;              /* cor do texto */
+  text-decoration: none;      /* remove o sublinhado */
+  font-weight: bold;          /* deixa o texto mais marcante */
+  padding: 6px 10px;          /* espaço interno */
+  border-radius: 4px;         /* cantos arredondados */
+  transition: background-color 0.3s ease;
+}
