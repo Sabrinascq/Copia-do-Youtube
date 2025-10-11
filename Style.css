@@ -1,54 +1,392 @@
+/* Variáveis para Cores Comuns */
+:root {
+  --bg-dark: #0f0f0f; 
+  --bg-medium: #282828; 
+  --text-light: #ffffff; 
+  --text-dark: #aaaaaa; 
+  --red-yt: #ff0000; 
+  --border-color: #303030;
+}
+
+/* Estilos Globais */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  color: white;/* cor do texto */
-  font-family: Arial, sans-serif;/* fonte padrão */
-  background-color: #0f0f0f;/* cor de fundo */
-  padding: 20px;/* espaço interno */
-}
-.menu {
-  background-color: #0f0f0f;/* cor de fundo */
-  padding: 10px;/* espaço interno */
-  display: flex;/* usa flexbox para layout */
-  gap: 20px;/* espaço entre os links */
-  align-items: center;/* alinha os itens verticalmente */
-  border-radius: 8px;/* cantos arredondados */
-  border: 1px solid #888; 
-}
-
-h1 {
-  margin-bottom: 20px;/* espaço abaixo do título */
-}
-
-.carrossel {
-  display: flex;/* usa flexbox para layout */
-  overflow-x: auto;/* permite rolagem horizontal */
-  gap: 20px;/* espaço entre os vídeos */
-  padding-bottom: 10px;/* espaço abaixo do carrossel */
-  scroll-behavior: smooth;/* animação suave ao rolar */
-}
-
-
-.video {
-/*tamanho do video-imagem*/ 
-  min-width: 200px;/* largura mínima */
-  flex: 0;/* impede que o item cresça ou encolha */
-  text-align: center;/* centraliza o texto */
-}
-
-.video img {
-  width: 100%;/* largura total do container */
-  border-radius: 8px;/* cantos arredondados */
-}
-
-.video p {
-  margin-top: 8px;/* espaço acima do texto */
-  font-weight: bold;/* deixa o texto mais marcante */
+  color: var(--text-light);
+  font-family: 'Roboto', Arial, sans-serif; 
+  background-color: var(--bg-dark);
+  min-height: 100vh;
 }
 
 a {
-  color: white;              /* cor do texto */
-  text-decoration: none;      /* remove o sublinhado */
-  font-weight: bold;          /* deixa o texto mais marcante */
-  padding: 6px 10px;          /* espaço interno */
-  border-radius: 4px;         /* cantos arredondados */
-  transition: background-color 0.3s ease;
+  color: inherit; 
+  text-decoration: none;
+}
+
+
+/* Barra de Navegação  */
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: var(--bg-dark);
+  position: sticky; 
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid var(--border-color); 
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Menu */
+.menu-icon {
+  background: none;
+  border: none;
+  color: var(--text-light);
+  font-size: 24px;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.logo-text {
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--text-light);
+  position: relative;
+  padding-left: 20px;
+}
+
+.logo-text::before {
+  content: "▶"; 
+  color: var(--red-yt);
+  position: absolute;
+  left: 0;
+  font-size: 22px;
+}
+
+/* Pesquisa */
+.search-area {
+  display: flex;
+  flex-grow: 0; 
+  width: 40%; 
+  max-width: 600px;
+}
+
+.search-input {
+  flex-grow: 1;
+  padding: 10px 15px;
+  border: 1px solid var(--border-color);
+  border-right: none;
+  border-radius: 40px 0 0 40px;
+  background-color: #121212; 
+  color: var(--text-light);
+  font-size: 16px;
+  outline: none; 
+} 
+
+.search-input::placeholder {
+  color: var(--text-dark);
+}
+
+/*  Pesquisar */
+.search-button {
+  padding: 10px 20px;
+  background-color: var(--bg-medium);
+  border: 1px solid var(--border-color);
+  border-radius: 0 40px 40px 0;
+  color: var(--text-light);
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.search-button:hover {
+  background-color: #3f3f3f;
+}
+
+.user-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* */
+.action-button {
+  background: none;
+  border: 1px solid var(--text-dark);
+  color: var(--text-light);
+  padding: 8px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.action-button:hover {
+  background-color: var(--bg-medium);
+}
+
+.user-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #606060;
+  color: var(--text-light);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.main-content {
+  display: flex;
+}
+
+/* Barra Lateral */
+.sidebar {
+  width: 200px;
+  padding: 15px 0;
+  position: sticky;
+  top: 60px;
+  height: calc(100vh - 60px);
+  overflow-y: auto; 
+  border-right: 1px solid var(--border-color);
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  transition: background-color 0.2s;
+  font-weight: 500;
+}
+
+.nav-item:hover {
+  background-color: var(--bg-medium);
+}
+
+.nav-item .icon {
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+.nav-item.active {
+  background-color: #3d3d3d; 
+  font-weight: bold;
+}
+
+.sidebar-divider {
+  border: none;
+  height: 1px;
+  background-color: var(--border-color);
+  margin: 10px 0;
+}
+
+/* Área de Vídeos */
+.video-grid {
+  flex-grow: 1;
+  padding: 25px 20px;
+}
+
+.section-title {
+  font-size: 22px;
+  margin-bottom: 20px;
+  font-weight: 700;
+  color: var(--text-light);
+}
+
+.second-section {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-color);
+}
+
+
+.video-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.video-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.video-thumbnail-link {
+  position: relative;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.video-thumbnail {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.video-duration {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: var(--text-light);
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.video-details {
+  display: flex;
+  gap: 10px;
+}
+
+.channel-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #888;
+  color: var(--text-light);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  flex-shrink: 0; 
+}
+
+.video-info {
+  overflow: hidden;
+}
+
+.video-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 4px;
+  display: -webkit-box;
+
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.channel-name,
+.video-metadata {
+  font-size: 14px;
+  color: var(--text-dark);
+  margin-bottom: 2px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  color: var(--text-dark);
+  border-top: 1px solid var(--border-color);
+  margin-top: 30px;
+}
+
+/*Criação de Conta */
+.create-account-main {
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  min-height: calc(100vh - 60px); 
+  padding: 20px;
+}
+
+.signup-container {
+  background-color: var(--bg-medium); 
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  width: 100%;
+  max-width: 450px; 
+  text-align: center;
+}
+
+.signup-title {
+  font-size: 24px;
+  margin-bottom: 5px;
+  color: var(--text-light);
+}
+
+.signup-subtitle {
+  font-size: 16px;
+  color: var(--text-dark);
+  margin-bottom: 25px;
+}
+
+.signup-form {
+  text-align: left; 
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block; 
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: var(--text-light);
+}
+
+.signup-form input[type="text"],
+.signup-form input[type="email"],
+.signup-form input[type="password"] {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.signup-form input:focus {
+  border-color: var(--red-yt); 
+}
+
+/* Botão: Envio de Formulário */
+.submit-button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--red-yt); 
+  color: var(--text-light);
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-top: 10px;
+}
+
+.submit-button:hover {
+  background-color: #cc0000; 
+}
+
+.login-link {
+  margin-top: 20px;
+  font-size: 14px;
+  color: var(--text-dark);
+}
+
+.login-link a {
+  color: var(--red-yt);
+  font-weight: bold;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
 }

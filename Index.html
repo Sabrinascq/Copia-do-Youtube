@@ -1,63 +1,140 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
+   
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página inicial - YT</title>
+    <title>FocoPlay</title>
     <link rel="stylesheet" href="style.css">
-</head>
+    </head>
 
 <body>
-    <header>
-        <div class="menu">
+    <header class="main-header">
+        <div class="logo-area">
+            <button class="menu-icon" aria-label="Abrir Menu">☰</button>
+            <a href="#" class="logo-link">
+                <span class="logo-text">FocoPlay</span>
+            </a>
+        </div>
 
-            <a href="#">Início</a> <!-- adicionar logo depois do yt-->
-            <a href="#">Em alta</a>
-            <a href="#">Inscrições</a>
-            <input type="text" placeholder="Pesquisar">
-            <button>Pesquisar</button> <!-- pesquisar forma de substituir por uma lupa-->
+        <div class="search-area">
+            <input type="text" placeholder="Pesquisar" class="search-input">
+            <button class="search-button" aria-label="Pesquisar">
+                &#x1F50D; 
+            </button>
+        </div>
+
+        <div class="user-actions">
+            <a href="CriarConta.html" class="action-button">Criar</a> 
+            <div class="user-avatar">U</div>
         </div>
     </header>
+<!--Menu lateral-->
+    <main class="main-content">
+        <nav class="sidebar">
+            <a href="#" class="nav-item active">
+                <span class="icon"></span> Início 
+            </a>
+            <a href="#" class="nav-item">
+                <span class="icon"></span> Em alta
+            </a>
+            <a href="#" class="nav-item">
+                <span class="icon"></span> Inscrições
+            </a>
+            <hr class="sidebar-divider">
+            <a href="#" class="nav-item">
+                <span class="icon"></span> Histórico
+            </a>
+        </nav>
+        <!-- 
+        Colocar os icons dps com imgens
+        -->
+        <section class="video-grid">
+            <h1 class="section-title">Recomendados</h1>
 
-    <main>
-        <!-- adicionando os videos 
-         Pegar imagem congelado do video nesse formato:
-         Link do vídeo: https://www.youtube.com/watch?v=3JiMr-HgHJ8 ID do vídeo: 3JiMr-HgHJ8 
-         Link da imagem congelada: https://img.youtube.com/vi/3JiMr-HgHJ8/0.jpg 
-         -->
-       
-         <div class="cabecalho">
-            <h1>Vídeos Recomendados</h1>
-        </div>
+            <div class="video-container">
+                <div class="video-card">
+                    <a href="video1.html" class="video-thumbnail-link">
+                        <img src="https://img.youtube.com/vi/3JiMr-HgHJ8/hqdefault.jpg" alt="Vídeo 1" class="video-thumbnail">
+                        <span class="video-duration">10:45</span>
+                    </a>
+                    <div class="video-details">
+                        <div class="channel-avatar">C1</div>
+                        <div class="video-info">
+                            <h2 class="video-title">Título Incrível do Vídeo 1</h2>
+                            <p class="channel-name">Nome do Canal 1</p>
+                            <p class="video-metadata">1M de visualizações • há 1 dia</p>
+                        </div>
+                    </div>
+                </div>
 
-        <div class="carrossel">
-            <div class="video">
-                <a href="video1.html">
-                    <img src="https://img.youtube.com/vi/3JiMr-HgHJ8/0.jpg" alt="Vídeo 1">
-                    <p>Vídeo 1</p>
-                </a>
+                <div class="video-card">
+                    <a href="video2.html" class="video-thumbnail-link">
+                        <img src="https://img.youtube.com/vi/tgbNymZ7vqY/hqdefault.jpg" alt="Vídeo 2" class="video-thumbnail">
+                        <span class="video-duration">05:30</span>
+                    </a>
+                    <div class="video-details">
+                        <div class="channel-avatar">C2</div>
+                        <div class="video-info">
+                            <h2 class="video-title">Outro Título Super Interessante</h2>
+                            <p class="channel-name">Nome do Canal 2</p>
+                            <p class="video-metadata">500 mil visualizações • há 3 dias</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <a href="video3.html" class="video-thumbnail-link">
+                        <img src="https://img.youtube.com/vi/dQw4w9WgXcQ/hqdefault.jpg" alt="Vídeo 3" class="video-thumbnail">
+                        <span class="video-duration">03:00</span>
+                    </a>
+                    <div class="video-details">
+                        <div class="channel-avatar">C3</div>
+                        <div class="video-info">
+                            <h2 class="video-title">Título de Vídeo Chamativo!</h2>
+                            <p class="channel-name">Nome do Canal 3</p>
+                            <p class="video-metadata">2M de visualizações • há 1 semana</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="video-card">
+                    <a href="video4.html" class="video-thumbnail-link">
+                        <img src="https://img.youtube.com/vi/3JiMr-HgHJ8/hqdefault.jpg" alt="Vídeo 4" class="video-thumbnail">
+                        <span class="video-duration">10:45</span>
+                    </a>
+                    <div class="video-details">
+                        <div class="channel-avatar">C4</div>
+                        <div class="video-info">
+                            <h2 class="video-title">Título Incrível do Vídeo 4</h2>
+                            <p class="channel-name">Nome do Canal 4</p>
+                            <p class="video-metadata">1M de visualizações • há 1 dia</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <h1 class="section-title second-section">Tendências</h1>
+            <div class="video-container">
+                <div class="video-card">
+                    <a href="video5.html" class="video-thumbnail-link">
+                        <img src="https://img.youtube.com/vi/tgbNymZ7vqY/hqdefault.jpg" alt="Vídeo 5" class="video-thumbnail">
+                        <span class="video-duration">05:30</span>
+                    </a>
+                    <div class="video-details">
+                        <div class="channel-avatar">C5</div>
+                        <div class="video-info">
+                            <h2 class="video-title">Outro Título Super Interessante 5</h2>
+                            <p class="channel-name">Nome do Canal 5</p>
+                            <p class="video-metadata">500 mil visualizações • há 3 dias</p>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <div class="video">
-                <a href="video2.html">
-                    <img src="https://img.youtube.com/vi/tgbNymZ7vqY/0.jpg" alt="Vídeo 2">
-                    <p>Vídeo 2</p>
-                </a>
-            </div>
-
-            <div class="video">
-                <a href="video3.html">
-                    <img src="https://img.youtube.com/vi/dQw4w9WgXcQ/0.jpg" alt="Vídeo 3">
-                    <p>Vídeo 3</p>
-                </a>
-            </div>
-        </div>
+        </section>
     </main>
-
-    <footer>
-        <p>© 2025 YouTube Clone</p>
-    </footer>
-</body>
+    
+    </body>
 
 </html>
