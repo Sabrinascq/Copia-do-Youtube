@@ -5,8 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FocoPlay</title>
+    <!-- Conecta ao CSS -->
     <link rel="stylesheet" href="style.css">
-    </head>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
 
 <body>
     <header class="main-header">
@@ -18,10 +20,18 @@
         </div>
 
         <div class="search-area">
-            <input type="text" placeholder="Pesquisar" class="search-input">
+            <!-- ADICIONADO ID "search-input" PARA O JAVASCRIPT ENCONTRAR -->
+            <input type="text" id="search-input" placeholder="Pesquisar" class="search-input">
             <button class="search-button" aria-label="Pesquisar">
                 &#x1F50D; 
             </button>
+        </div>
+
+        <!-- BOTÕES DE ACESSIBILIDADE -->
+        <div class="accessibility-controls">
+            <button id="btn-contrast" class="acc-btn" title="Alto Contraste">🌗</button>
+            <button id="btn-increase-font" class="acc-btn" title="Aumentar Fonte">A+</button>
+            <button id="btn-decrease-font" class="acc-btn" title="Diminuir Fonte">A-</button>
         </div>
 
         <div class="user-actions">
@@ -29,35 +39,35 @@
             <div class="user-avatar">U</div>
         </div>
     </header>
-<!--Menu lateral-->
+
     <main class="main-content">
         <nav class="sidebar">
             <a href="#" class="nav-item active">
-                <span class="icon"></span> Início 
+                <span class="icon">🏠</span> Início 
             </a>
             <a href="#" class="nav-item">
-                <span class="icon"></span> Em alta
+                <span class="icon">🔥</span> Em alta
             </a>
             <a href="#" class="nav-item">
-                <span class="icon"></span> Inscrições
+                <span class="icon">📺</span> Inscrições
             </a>
             <hr class="sidebar-divider">
             <a href="#" class="nav-item">
-                <span class="icon"></span> Histórico
+                <span class="icon">📜</span> Histórico
             </a>
         </nav>
-        <!-- 
-        Colocar os icons dps com imgens
-        -->
+        
         <section class="video-grid">
             <h1 class="section-title">Recomendados</h1>
 
-            <div class="video-container">
-                <div class="video-card">
-                    <a href="video1.html" class="video-thumbnail-link">
-                        <img src="https://img.youtube.com/vi/3JiMr-HgHJ8/hqdefault.jpg" alt="Vídeo 1" class="video-thumbnail">
+            <div class="video-container" id="video-list">
+                <!-- VÍDEO 1 -->
+                <!-- Mudamos de <a> para <div> com onclick para abrir o modal sem sair da página -->
+                <div class="video-card" onclick="abrirVideo('3JiMr-HgHJ8', 'Título Incrível do Vídeo 1', 'Canal 1')">
+                    <div class="video-thumbnail-link">
+                        <img src="https://img.youtube.com/vi/3JiMr-HgHJ8/hqdefault.jpg" alt="Thumbnail" class="video-thumbnail">
                         <span class="video-duration">10:45</span>
-                    </a>
+                    </div>
                     <div class="video-details">
                         <div class="channel-avatar">C1</div>
                         <div class="video-info">
@@ -68,11 +78,12 @@
                     </div>
                 </div>
 
-                <div class="video-card">
-                    <a href="video2.html" class="video-thumbnail-link">
-                        <img src="https://img.youtube.com/vi/tgbNymZ7vqY/hqdefault.jpg" alt="Vídeo 2" class="video-thumbnail">
+                <!-- VÍDEO 2 -->
+                <div class="video-card" onclick="abrirVideo('tgbNymZ7vqY', 'Outro Título Super Interessante', 'Canal 2')">
+                    <div class="video-thumbnail-link">
+                        <img src="https://img.youtube.com/vi/tgbNymZ7vqY/hqdefault.jpg" alt="Thumbnail" class="video-thumbnail">
                         <span class="video-duration">05:30</span>
-                    </a>
+                    </div>
                     <div class="video-details">
                         <div class="channel-avatar">C2</div>
                         <div class="video-info">
@@ -83,11 +94,12 @@
                     </div>
                 </div>
 
-                <div class="video-card">
-                    <a href="video3.html" class="video-thumbnail-link">
-                        <img src="https://img.youtube.com/vi/dQw4w9WgXcQ/hqdefault.jpg" alt="Vídeo 3" class="video-thumbnail">
+                <!-- VÍDEO 3 -->
+                <div class="video-card" onclick="abrirVideo('dQw4w9WgXcQ', 'Título de Vídeo Chamativo!', 'Canal 3')">
+                    <div class="video-thumbnail-link">
+                        <img src="https://img.youtube.com/vi/dQw4w9WgXcQ/hqdefault.jpg" alt="Thumbnail" class="video-thumbnail">
                         <span class="video-duration">03:00</span>
-                    </a>
+                    </div>
                     <div class="video-details">
                         <div class="channel-avatar">C3</div>
                         <div class="video-info">
@@ -98,11 +110,12 @@
                     </div>
                 </div>
                 
-                <div class="video-card">
-                    <a href="video4.html" class="video-thumbnail-link">
-                        <img src="https://img.youtube.com/vi/3JiMr-HgHJ8/hqdefault.jpg" alt="Vídeo 4" class="video-thumbnail">
+                <!-- VÍDEO 4 -->
+                <div class="video-card" onclick="abrirVideo('3JiMr-HgHJ8', 'Título Incrível do Vídeo 4', 'Canal 4')">
+                    <div class="video-thumbnail-link">
+                        <img src="https://img.youtube.com/vi/3JiMr-HgHJ8/hqdefault.jpg" alt="Thumbnail" class="video-thumbnail">
                         <span class="video-duration">10:45</span>
-                    </a>
+                    </div>
                     <div class="video-details">
                         <div class="channel-avatar">C4</div>
                         <div class="video-info">
@@ -116,11 +129,12 @@
             
             <h1 class="section-title second-section">Tendências</h1>
             <div class="video-container">
-                <div class="video-card">
-                    <a href="video5.html" class="video-thumbnail-link">
-                        <img src="https://img.youtube.com/vi/tgbNymZ7vqY/hqdefault.jpg" alt="Vídeo 5" class="video-thumbnail">
+                <!-- VÍDEO 5 -->
+                <div class="video-card" onclick="abrirVideo('tgbNymZ7vqY', 'Outro Título Super Interessante 5', 'Canal 5')">
+                    <div class="video-thumbnail-link">
+                        <img src="https://img.youtube.com/vi/tgbNymZ7vqY/hqdefault.jpg" alt="Thumbnail" class="video-thumbnail">
                         <span class="video-duration">05:30</span>
-                    </a>
+                    </div>
                     <div class="video-details">
                         <div class="channel-avatar">C5</div>
                         <div class="video-info">
@@ -134,8 +148,44 @@
 
         </section>
     </main>
-    
-    </body>
 
+    <!-- ESTRUTURA DO MODAL (JANELA DE VÍDEO E COMENTÁRIOS) -->
+    <!-- Ele fica invisível até clicar em um vídeo -->
+    <div id="video-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="fecharVideo()">&times;</span>
+            
+            <!-- Player do YouTube -->
+            <div class="video-wrapper">
+                <iframe id="youtube-iframe" width="100%" height="400" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+
+            <div class="modal-info">
+                <h2 id="modal-title">Título do Vídeo</h2>
+                <p id="modal-channel">Nome do Canal</p>
+            </div>
+
+            <!-- Área de Comentários -->
+            <div class="comments-section">
+                <h3>Comentários</h3>
+                
+                <div class="comment-form">
+                    <input type="text" id="comment-input" placeholder="Adicione um comentário...">
+                    <button onclick="adicionarComentario()">Comentar</button>
+                </div>
+
+                <div id="comments-list" class="comments-list">
+                    <!-- Comentários aparecerão aqui via JS -->
+                    <div class="comment">
+                        <span class="user">Visitante:</span>
+                        <span class="text">Muito bom esse vídeo!</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- LINK PARA O ARQUIVO JAVASCRIPT -->
+    <script src="script.js"></script>
+</body>
 </html>
-

@@ -1,4 +1,4 @@
-/* Variáveis para Cores Comuns */
+/* --- Variáveis Globais --- */
 :root {
   --bg-dark: #0f0f0f; 
   --bg-medium: #282828; 
@@ -6,13 +6,29 @@
   --text-dark: #aaaaaa; 
   --red-yt: #ff0000; 
   --border-color: #303030;
+  /* Variável para controle de tamanho da fonte (Acessibilidade) */
+  --base-font-size: 16px; 
 }
 
-/* Estilos Globais */
+/* --- Tema Claro (Alto Contraste) --- */
+body.light-theme {
+  --bg-dark: #ffffff;
+  --bg-medium: #f0f0f0;
+  --text-light: #000000;
+  --text-dark: #333333;
+  --border-color: #cccccc;
+}
+
+/* --- Reset e Globais --- */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+/* Aplica o tamanho base da fonte para permitir o zoom via JS */
+html {
+  font-size: var(--base-font-size);
 }
 
 body {
@@ -20,6 +36,8 @@ body {
   font-family: 'Roboto', Arial, sans-serif; 
   background-color: var(--bg-dark);
   min-height: 100vh;
+  /* Transição suave ao trocar o tema */
+  transition: background-color 0.3s, color 0.3s;
 }
 
 a {
@@ -27,8 +45,7 @@ a {
   text-decoration: none;
 }
 
-
-/* Barra de Navegação  */
+/* --- Cabeçalho --- */
 .main-header {
   display: flex;
   justify-content: space-between;
@@ -47,18 +64,17 @@ a {
   gap: 15px;
 }
 
-/* Menu */
 .menu-icon {
   background: none;
   border: none;
   color: var(--text-light);
-  font-size: 24px;
+  font-size: 1.5rem;
   cursor: pointer;
   padding: 5px;
 }
 
 .logo-text {
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: bold;
   color: var(--text-light);
   position: relative;
@@ -70,14 +86,14 @@ a {
   color: var(--red-yt);
   position: absolute;
   left: 0;
-  font-size: 22px;
+  font-size: 1.375rem;
 }
 
-/* Pesquisa */
+/* --- Pesquisa --- */
 .search-area {
   display: flex;
   flex-grow: 0; 
-  width: 40%; 
+  width: 30%; 
   max-width: 600px;
 }
 
@@ -89,7 +105,7 @@ a {
   border-radius: 40px 0 0 40px;
   background-color: #121212; 
   color: var(--text-light);
-  font-size: 16px;
+  font-size: 1rem;
   outline: none; 
 } 
 
@@ -97,14 +113,13 @@ a {
   color: var(--text-dark);
 }
 
-/*  Pesquisar */
 .search-button {
   padding: 10px 20px;
   background-color: var(--bg-medium);
   border: 1px solid var(--border-color);
   border-radius: 0 40px 40px 0;
   color: var(--text-light);
-  font-size: 18px;
+  font-size: 1.125rem;
   cursor: pointer;
   transition: background-color 0.2s;
 }
@@ -113,13 +128,35 @@ a {
   background-color: #3f3f3f;
 }
 
+/* --- Botões de Acessibilidade (Header) --- */
+.accessibility-controls {
+    display: flex;
+    gap: 5px;
+    margin: 0 10px;
+}
+
+.acc-btn {
+    background-color: var(--bg-medium);
+    color: var(--text-light);
+    border: 1px solid var(--border-color);
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+
+.acc-btn:hover {
+    background-color: var(--border-color);
+}
+
 .user-actions {
   display: flex;
   align-items: center;
   gap: 15px;
 }
 
-/* */
 .action-button {
   background: none;
   border: 1px solid var(--text-dark);
@@ -147,6 +184,7 @@ a {
   cursor: pointer;
 }
 
+/* --- Layout Principal --- */
 .main-content {
   display: flex;
 }
@@ -176,7 +214,7 @@ a {
 
 .nav-item .icon {
   margin-right: 10px;
-  font-size: 18px;
+  font-size: 1.125rem;
 }
 
 .nav-item.active {
@@ -191,14 +229,14 @@ a {
   margin: 10px 0;
 }
 
-/* Área de Vídeos */
+/* --- Área de Vídeos --- */
 .video-grid {
   flex-grow: 1;
   padding: 25px 20px;
 }
 
 .section-title {
-  font-size: 22px;
+  font-size: 1.375rem;
   margin-bottom: 20px;
   font-weight: 700;
   color: var(--text-light);
@@ -210,7 +248,6 @@ a {
   border-top: 1px solid var(--border-color);
 }
 
-
 .video-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -220,6 +257,7 @@ a {
 .video-card {
   display: flex;
   flex-direction: column;
+  cursor: pointer; /* Indica que é clicável */
 }
 
 .video-thumbnail-link {
@@ -242,7 +280,7 @@ a {
   color: var(--text-light);
   padding: 2px 4px;
   border-radius: 4px;
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: bold;
 }
 
@@ -260,7 +298,7 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 14px;
+  font-size: 0.875rem;
   flex-shrink: 0; 
 }
 
@@ -269,18 +307,17 @@ a {
 }
 
 .video-title {
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: bold;
   margin-bottom: 4px;
   display: -webkit-box;
-
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
 
 .channel-name,
 .video-metadata {
-  font-size: 14px;
+  font-size: 0.875rem;
   color: var(--text-dark);
   margin-bottom: 2px;
 }
@@ -293,100 +330,122 @@ footer {
   margin-top: 30px;
 }
 
-/*Criação de Conta */
-.create-account-main {
-  display: flex;
-  justify-content: center; 
-  align-items: center; 
-  min-height: calc(100vh - 60px); 
-  padding: 20px;
+/* --- MODAL DE VÍDEO (NOVO) --- */
+/* Estilos para a janela que abre ao clicar no vídeo */
+.modal {
+    display: none; /* Escondido por padrão */
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85); /* Fundo escuro transparente */
+    justify-content: center;
+    align-items: center;
 }
 
-.signup-container {
-  background-color: var(--bg-medium); 
-  padding: 40px;
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-  width: 100%;
-  max-width: 450px; 
-  text-align: center;
+.modal-content {
+    background-color: var(--bg-medium);
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 800px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
 }
 
-.signup-title {
-  font-size: 24px;
-  margin-bottom: 5px;
-  color: var(--text-light);
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: var(--text-dark);
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
 }
 
-.signup-subtitle {
-  font-size: 16px;
-  color: var(--text-dark);
-  margin-bottom: 25px;
+.close-btn:hover {
+    color: var(--red-yt);
 }
 
-.signup-form {
-  text-align: left; 
+/* Área Responsiva do Vídeo (16:9) */
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; 
+    height: 0;
+    overflow: hidden;
+    margin-bottom: 15px;
+    background: #000;
 }
 
-.form-group {
-  margin-bottom: 20px;
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
-.form-group label {
-  display: block; 
-  margin-bottom: 8px;
-  font-weight: 500;
-  color: var(--text-light);
+.modal-info h2 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
 }
 
-.signup-form input[type="text"],
-.signup-form input[type="email"],
-.signup-form input[type="password"] {
-  width: 100%;
-  padding: 12px 15px;
-  border: 1px solid var(--border-color);
-  border-radius: 5px;
-  background-color: var(--bg-dark);
-  color: var(--text-light);
-  font-size: 16px;
-  outline: none;
-  transition: border-color 0.2s;
+.modal-info p {
+    color: var(--text-dark);
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border-color);
 }
 
-.signup-form input:focus {
-  border-color: var(--red-yt); 
+/* --- Área de Comentários (NOVO) --- */
+.comments-section {
+    margin-top: 20px;
 }
 
-/* Botão: Envio de Formulário */
-.submit-button {
-  width: 100%;
-  padding: 12px;
-  border: none;
-  border-radius: 5px;
-  background-color: var(--red-yt); 
-  color: var(--text-light);
-  font-size: 18px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.2s;
-  margin-top: 10px;
+.comment-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
 }
 
-.submit-button:hover {
-  background-color: #cc0000; 
+.comment-form input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-dark);
+    color: var(--text-light);
 }
 
-.login-link {
-  margin-top: 20px;
-  font-size: 14px;
-  color: var(--text-dark);
+.comment-form button {
+    padding: 10px 20px;
+    background-color: var(--red-yt);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
 }
 
-.login-link a {
-  color: var(--red-yt);
-  font-weight: bold;
+.comment-form button:hover {
+    background-color: #cc0000;
 }
 
-.login-link a:hover {
-  text-decoration: underline;
+.comments-list .comment {
+    background-color: rgba(255,255,255,0.05);
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.comments-list .user {
+    font-weight: bold;
+    color: var(--text-dark);
+    font-size: 0.9rem;
+    margin-right: 5px;
 }
