@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+   
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FocoPlay</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="logo-area">
+            <button class="menu-icon" aria-label="Abrir Menu">☰</button>
+            <a href="#" class="logo-link">
+                <span class="logo-text">FocoPlay</span>
+            </a>
+        </div>
+
+        <div class="search-area">
+            <input type="text" id="search-input" placeholder="Pesquisar" class="search-input">
+            <button class="search-button" aria-label="Pesquisar">
+                &#x1F50D; 
+            </button>
+        </div>
+
+        <div class="accessibility-controls">
+            <button id="btn-contrast" class="acc-btn" title="Alto Contraste">🌗</button>
+            <button id="btn-increase-font" class="acc-btn" title="Aumentar Fonte">A+</button>
+            <button id="btn-decrease-font" class="acc-btn" title="Diminuir Fonte">A-</button>
+        </div>
+
+        <div class="user-actions">
+            <a href="criarConta.html" class="action-button">Criar</a> 
+            <div class="user-avatar">U</div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <nav class="sidebar">
+            <a href="#" class="nav-item active">
+                <span class="icon">🏠</span> Início 
+            </a>
+            <a href="#" class="nav-item">
+                <span class="icon">🔥</span> Em alta
+            </a>
+            <a href="#" class="nav-item">
+                <span class="icon">📺</span> Inscrições
+            </a>
+            <hr class="sidebar-divider">
+            <a href="#" class="nav-item">
+                <span class="icon">📜</span> Histórico
+            </a>
+        </nav>
+        
+        <section class="video-grid">
+            <h1 class="section-title">Vídeos FocoPlay</h1>
+
+            <div class="video-container" id="video-list">
+                
+                <div class="video-card" onclick="abrirVideo('K4DyBUG242c', 'Cartoon - On & On (feat. Daniel Levi) | NCS Release', 'NoCopyrightSounds')">
+                    <div class="video-thumbnail-link">
+                        <img src="https://img.youtube.com/vi/K4DyBUG242c/hqdefault.jpg" alt="Thumbnail do vídeo Cartoon - On & On" class="video-thumbnail">
+                        <span class="video-duration">03:25</span>
+                    </div>
+                    <div class="video-details">
+                        <div class="channel-avatar">NCS</div>
+                        <div class="video-info">
+                            <h2 class="video-title">Cartoon - On & On (feat. Daniel Levi)</h2>
+                            <p class="channel-name">NoCopyrightSounds</p>
+                            <p class="video-metadata">1.2B visualizações • há 8 anos</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-card" onclick="abrirVideo('tgbNymZ7vqY', 'Mix de Música Tropical House Livre de Direitos', 'Canal Free Music')">
+                    <div class="video-thumbnail-link">
+                        <img src="https://img.youtube.com/vi/tgbNymZ7vqY/hqdefault.jpg" alt="Thumbnail do vídeo Tropical House" class="video-thumbnail">
+                        <span class="video-duration">05:30</span>
+                    </div>
+                    <div class="video-details">
+                        <div class="channel-avatar">FM</div>
+                        <div class="video-info">
+                            <h2 class="video-title">Mix de Música Tropical House Livre de Direitos</h2>
+                            <p class="channel-name">Canal Free Music</p>
+                            <p class="video-metadata">500 mil visualizações • há 3 dias</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-card" onclick="abrirVideo('n61ULEU7CO0', 'Tobu - Candyland | NCS Release', 'NoCopyrightSounds')">
+                    <div class="video-thumbnail-link">
+                        <img src="https://img.youtube.com/vi/n61ULEU7CO0/hqdefault.jpg" alt="Thumbnail do vídeo Tobu - Candyland" class="video-thumbnail">
+                        <span class="video-duration">03:28</span>
+                    </div>
+                    <div class="video-details">
+                        <div class="channel-avatar">NCS</div>
+                        <div class="video-info">
+                            <h2 class="video-title">Tobu - Candyland | NCS Release</h2>
+                            <p class="channel-name">NoCopyrightSounds</p>
+                            <p class="video-metadata">200M visualizações • há 7 anos</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="video-card" onclick="abrirVideo('60ItHLz5WEA', 'Different Heaven & EH!DE - My Heart | NCS Release', 'NoCopyrightSounds')">
+                    <div class="video-thumbnail-link">
+                        <img src="https://img.youtube.com/vi/60ItHLz5WEA/hqdefault.jpg" alt="Thumbnail do vídeo My Heart" class="video-thumbnail">
+                        <span class="video-duration">04:15</span>
+                    </div>
+                    <div class="video-details">
+                        <div class="channel-avatar">NCS</div>
+                        <div class="video-info">
+                            <h2 class="video-title">Different Heaven & EH!DE - My Heart</h2>
+                            <p class="channel-name">NoCopyrightSounds</p>
+                            <p class="video-metadata">150M visualizações • há 7 anos</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-card" onclick="abrirVideo('3NycM9lYdRI', 'Syn Cole - Feel Good | NCS Release', 'NoCopyrightSounds')">
+                    <div class="video-thumbnail-link">
+                        <img src="https://img.youtube.com/vi/3NycM9lYdRI/hqdefault.jpg" alt="Thumbnail do vídeo Syn Cole - Feel Good" class="video-thumbnail">
+                        <span class="video-duration">03:15</span>
+                    </div>
+                    <div class="video-details">
+                        <div class="channel-avatar">NCS</div>
+                        <div class="video-info">
+                            <h2 class="video-title">Syn Cole - Feel Good | NCS Release</h2>
+                            <p class="channel-name">NoCopyrightSounds</p>
+                            <p class="video-metadata">120M visualizações • há 5 anos</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-card" onclick="abrirVideo('7NOSDKb0HlU', 'Alan Walker - Fade | NCS Release', 'NoCopyrightSounds')">
+                    <div class="video-thumbnail-link">
+                        <img src="https://img.youtube.com/vi/7NOSDKb0HlU/hqdefault.jpg" alt="Thumbnail do vídeo Alan Walker - Fade" class="video-thumbnail">
+                        <span class="video-duration">04:24</span>
+                    </div>
+                    <div class="video-details">
+                        <div class="channel-avatar">NCS</div>
+                        <div class="video-info">
+                            <h2 class="video-title">Alan Walker - Fade | NCS Release</h2>
+                            <p class="channel-name">NoCopyrightSounds</p>
+                            <p class="video-metadata">400M visualizações • há 8 anos</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-card" onclick="abrirVideo('y6120QOlsfU', 'DEAF KEV - Invincible | NCS Release', 'NoCopyrightSounds')">
+                    <div class="video-thumbnail-link">
+                        <img src="https://img.youtube.com/vi/y6120QOlsfU/hqdefault.jpg" alt="Thumbnail do vídeo DEAF KEV - Invincible" class="video-thumbnail">
+                        <span class="video-duration">05:02</span>
+                    </div>
+                    <div class="video-details">
+                        <div class="channel-avatar">NCS</div>
+                        <div class="video-info">
+                            <h2 class="video-title">DEAF KEV - Invincible | NCS Release</h2>
+                            <p class="channel-name">NoCopyrightSounds</p>
+                            <p class="video-metadata">210M visualizações • há 8 anos</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-card" onclick="abrirVideo('5qap5aO4i9A', 'lofi hip hop radio - beats to relax/study to', 'ChilledCow')">
+                    <div class="video-thumbnail-link">
+                        <img src="https://img.youtube.com/vi/5qap5aO4i9A/hqdefault.jpg" alt="Thumbnail da rádio lofi" class="video-thumbnail">
+                        <span class="video-duration">🔴 LIVE</span>
+                    </div>
+                    <div class="video-details">
+                        <div class="channel-avatar">LC</div>
+                        <div class="video-info">
+                            <h2 class="video-title">lofi hip hop radio - beats to relax/study to</h2>
+                            <p class="channel-name">Lofi Girl</p>
+                            <p class="video-metadata">2.5M visualizações • TRANSMISSÃO AO VIVO</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-card" onclick="abrirVideo('WhWc3b3KhnY', 'Jim Yosef - Eclipse | NCS Release', 'NoCopyrightSounds')">
+                    <div class="video-thumbnail-link">
+                        <img src="https://img.youtube.com/vi/WhWc3b3KhnY/hqdefault.jpg" alt="Thumbnail do vídeo Jim Yosef - Eclipse" class="video-thumbnail">
+                        <span class="video-duration">03:55</span>
+                    </div>
+                    <div class="video-details">
+                        <div class="channel-avatar">NCS</div>
+                        <div class="video-info">
+                            <h2 class="video-title">Jim Yosef - Eclipse | NCS Release</h2>
+                            <p class="channel-name">NoCopyrightSounds</p>
+                            <p class="video-metadata">85M visualizações • há 4 anos</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="video-card" onclick="abrirVideo('bP9gMpl1gyQ', 'Background Corporate Music - Royalty Free Piano', 'Background Music')">
+                    <div class="video-thumbnail-link">
+                        <img src="https://img.youtube.com/vi/bP9gMpl1gyQ/hqdefault.jpg" alt="Thumbnail de música corporativa" class="video-thumbnail">
+                        <span class="video-duration">02:55</span>
+                    </div>
+                    <div class="video-details">
+                        <div class="channel-avatar">BM</div>
+                        <div class="video-info">
+                            <h2 class="video-title">Background Corporate Music - Royalty Free Piano</h2>
+                            <p class="channel-name">Background Music</p>
+                            <p class="video-metadata">25K visualizações • há 2 dias</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-card" onclick="abrirVideo('r8tvN9RWIqw', 'Itro & Tobu - Cloud 9 | NCS Release', 'NoCopyrightSounds')">
+                    <div class="video-thumbnail-link">
+                        <img src="https://img.youtube.com/vi/r8tvN9RWIqw/hqdefault.jpg" alt="Thumbnail do vídeo Cloud 9" class="video-thumbnail">
+                        <span class="video-duration">03:15</span>
+                    </div>
+                    <div class="video-details">
+                        <div class="channel-avatar">NCS</div>
+                        <div class="video-info">
+                            <h2 class="video-title">Itro & Tobu - Cloud 9 | NCS Release</h2>
+                            <p class="channel-name">NoCopyrightSounds</p>
+                            <p class="video-metadata">75M visualizações • há 7 anos</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-card" onclick="abrirVideo('R8Z9X4Tlfd4', 'Warriyo - Mortals (feat. Laura Brehm) | NCS Release', 'NoCopyrightSounds')">
+                    <div class="video-thumbnail-link">
+                        <img src="https://img.youtube.com/vi/R8Z9X4Tlfd4/hqdefault.jpg" alt="Thumbnail do vídeo Warriyo - Mortals" class="video-thumbnail">
+                        <span class="video-duration">03:48</span>
+                    </div>
+                    <div class="video-details">
+                        <div class="channel-avatar">NCS</div>
+                        <div class="video-info">
+                            <h2 class="video-title">Warriyo - Mortals (feat. Laura Brehm) | NCS Release</h2>
+                            <p class="channel-name">NoCopyrightSounds</p>
+                            <p class="video-metadata">110M visualizações • há 5 anos</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            
+            <h1 class="section-title second-section">Tendências (Músicas)</h1>
+            <div class="video-container">
+                <div class="video-card" onclick="abrirVideo('z6X5oEIg6Ak', 'Tropical House Mix 2024 - Copyright Free Music', 'Free Music Channel')">
+                    <div class="video-thumbnail-link">
+                        <img src="https://img.youtube.com/vi/z6X5oEIg6Ak/hqdefault.jpg" alt="Thumbnail do vídeo Tropical House Mix" class="video-thumbnail">
+                        <span class="video-duration">01:05:30</span>
+                    </div>
+                    <div class="video-details">
+                        <div class="channel-avatar">FMC</div>
+                        <div class="video-info">
+                            <h2 class="video-title">Tropical House Mix 2024 - Copyright Free Music</h2>
+                            <p class="channel-name">Free Music Channel</p>
+                            <p class="video-metadata">500 mil visualizações • há 3 dias</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <div id="video-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="fecharVideo()">&times;</span>
+            
+            <div class="video-wrapper">
+                <iframe id="youtube-iframe" width="100%" height="400" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+
+            <div class="modal-info">
+                <h2 id="modal-title">Título do Vídeo</h2>
+                <p id="modal-channel">Nome do Canal</p>
+            </div>
+
+            <div class="comments-section">
+                <h3>Comentários</h3>
+                
+                <div class="comment-form">
+                    <input type="text" id="comment-input" placeholder="Adicione um comentário...">
+                    <button onclick="adicionarComentario()">Comentar</button>
+                </div>
+
+                <div id="comments-list" class="comments-list">
+                    <div class="comment">
+                        <span class="user">Visitante:</span>
+                        <span class="text">Muito bom esse vídeo!</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

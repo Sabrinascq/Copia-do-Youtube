@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar Conta | FocoPlay</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Link para o CSS -->
+    <link rel="stylesheet" href="criarConta.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="logo-area">
+            <a href="index.html" class="logo-link">
+                <span class="logo-text">FocoPlay</span>
+            </a>
+        </div>
+        <!-- Acessibilidade -->
+        <div class="accessibility-controls">
+            <button id="btn-contrast" class="acc-btn">🌗 Contraste</button>
+            <button id="btn-increase-font" class="acc-btn">A+</button>
+            <button id="btn-decrease-font" class="acc-btn">A-</button>
+        </div>
+    </header>
+
+    <main class="create-account-main">
+        <div class="signup-container">
+            <h1 class="signup-title">Cadastro de Usuários</h1>
+            <p class="signup-subtitle">Gerenciamento - Projeto 2</p>
+
+            <form id="user-form" class="signup-form">
+                <div class="form-group">
+                    <label for="name">Nome Completo</label>
+                    <input type="text" id="name" placeholder="Nome" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" placeholder="E-mail" required>
+                </div>
+                <div class="form-actions">
+                    <button type="button" id="btn-clear" class="btn btn-clear">Limpar</button>
+                    <button type="submit" class="btn btn-submit">Cadastrar</button>
+                </div>
+            </form>
+
+            <div class="filter-section">
+                <input type="text" id="search-input" class="filter-input" placeholder="Pesquisar usuário...">
+                <div id="user-list" class="user-list-container"></div>
+                <button id="btn-delete-all" class="btn-delete-all">Excluir Todos</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Link para o JS -->
+    <script src="criarConta.js"></script>
+</body>
+</html>
