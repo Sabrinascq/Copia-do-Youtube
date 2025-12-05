@@ -1,5 +1,4 @@
-# 📌 Nome do Projeto
-
+# ▶️ FocoPlay 
 
 ---
 
@@ -9,18 +8,22 @@
 - Thiago Henrique Almeida dos Santos
 
 ---
-
 ## 🌍 ODS selecionado ou instituição atendida
-Embora a plataforma contribua com a maioria das ODS por abordar e levar informações sobre, vamos focar na ODS sobre Educação de Qualidade(ODS 4) que acaba se destacando mais nesse contexto.
+Considerando o desenvolvimento e a infraestrutura tecnológica da plataforma, focaremos na **ODS 9: Indústria, Inovação e Infraestrutura**. O projeto representa a criação de uma **infraestrutura digital** acessível, promovendo a inovação tecnológica e o desenvolvimento de soluções resilientes para a disseminação de conteúdo de mídia.
+
 ---
 
 ## 📝 Descrição do projeto
-O projeto tem como base desenvolver uma plataforma em HTML inspirada na plataforma Youtube. 
+O projeto tem como base desenvolver uma plataforma em HTML inspirada na plataforma **Youtube**. 
 
 ---
 
 ## 🗂️ Estrutura do projeto
-index.html
-Style.css 
+A estrutura principal do projeto inclui os seguintes arquivos:
 
-
+* **index.html**
+* **script.js**
+* **style.css**
+* **criarConta.css**
+* **criarConta.html**
+* **criarConta.js**
